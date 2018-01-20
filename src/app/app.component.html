@@ -1,5 +1,17 @@
 <h1> Hello!!!!!! </h1>
-<h1> Hello 2 !!! </h1>
+
+<div>
+
+  <p> Hello {{currentUser.username}}!!</p>
+
+  <p [hidden]='hideEmail'>Your email is : <em>{{currentUser.email}}</em></p>
+  <!-- event to component (click) is event and toggle() is your component  -->
+  <button (click)='toggle()'>Toggle (click)</button>
+
+</div>
+
+<button (mouseleave)="toggle()">Toggle(mouseleave)</button>
+<!-- <h1> Hello 2 !!! </h1>
 
 <p> this is definitely something </p>
 
@@ -13,8 +25,8 @@
 
 <p> Hello, {{ getUsername() }}</p>
 
-<input type="text" value="{{ getUsername() }}">
-
+<input type="text" value="{{ getUsername() }}"> -->
+<!--
 <div>
   <p>new div</p>
   <p> ===== </p>
@@ -33,4 +45,4 @@
 <input [class.blue-bg]='isBlueBg' type="text" placeholder="Enter your text">
 
 <input [style.background-color]='bgColor' type="text"
-                                          placeholder="Enter your text">
+                                          placeholder="Enter your text"> -->

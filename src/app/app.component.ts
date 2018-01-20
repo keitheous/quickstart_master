@@ -4,13 +4,18 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   // template: `<h1>Hello {{name}}!!!!</h1>`,
   templateUrl: 'app/app.component.html',
-  styles: ['.blue-bg{background-color:blue;}']
+  // styles: ['.blue-bg{background-color:pink;}']
 })
 // export class AppComponent  { name = 'Keith Adrian Chong'; }
 export class AppComponent {
   private username:string = "Keitheous"
   private currentUser:User = {username: "TestX", email: "test@test.com"}
   private hideEmail:boolean = true
+
+  private toggle() {
+    this.hideEmail = !this.hideEmail
+  }
+
   private disabledInput:boolean = false
 
   private isDisabled():boolean {
@@ -18,7 +23,7 @@ export class AppComponent {
   }
 
   private isBlueBg:boolean = true
-  private bgColor:string = 'red'
+  private bgColor:string = 'grey'
 
   private getUsername():string { // returns a string as specified
     return this.currentUser.username
