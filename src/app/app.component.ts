@@ -59,6 +59,15 @@ export class AppComponent {
   // changing these values and observe the changes on the html page
   // ====================================================================================================
   // ====================================================================================================
+  // Tutorial 3 : Event Binding
+
+  // uses hideEmail:boolean from tutorial 2
+  private toogle() {
+    //negate the current value
+    this.hideEmail = !this.hideEmail
+  }
+  // ====================================================================================================
+  // ====================================================================================================
 }
 
 // similar to classes - only defines types - part of tutorial 1

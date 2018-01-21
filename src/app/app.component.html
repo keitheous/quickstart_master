@@ -41,3 +41,18 @@
   <input [style.background-color]='bgColor' type='text'
                                                 placeholder='Enter text'>
 </div>
+
+<div class="event-binding">
+  <h2> ========================== </h2>
+  <h1> Tutorial 3 : Event Binding </h1>
+
+  <p> Hello {{ getUsername() }} </p>
+
+  <button (click)="toggle()">Toggle(click)</button>
+
+  <p>Email: </p>
+
+  <p [hidden]='hideEmail'>Your email is <em>{{currentUser.email}}</em></p>
+
+  <button (mouseleave)="toggle()">Toggle(mouseleave)</button>
+</div>
