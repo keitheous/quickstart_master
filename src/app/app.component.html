@@ -58,3 +58,24 @@
 
   <!-- negation doesnt work, 2 of the same element on page. for now lets move on -->
 </div>
+
+<div class="local-variables">
+  <h2> ========================== </h2>
+  <h1> Tutorial 4 : Local Variables </h1>
+  <p> assigning input value chomp to a local variable </p>
+  <p> new use of referencing which is a var with # in front</p>
+
+  <div>
+    <input type='text' #a (keyup)='0' placeholder="type something here!">
+    <p>input value is : {{a.value}}</p>
+  </div>
+
+
+  <div> <!-- clickevents - on click expect something to happen -->
+    <button type="button" name="button" (click)="changeMail(newMail.value)">Update Email!</button>
+    <input type="text"  placeholder="type and click!" #newMail>
+    <p> Hello {{currentUser.email}}!!</p>
+  </div>
+
+
+</div>

@@ -68,6 +68,23 @@ export class AppComponent {
   }
   // ====================================================================================================
   // ====================================================================================================
+  // Tutorial 4 : Event Binding
+
+  // private method changemail accepts one param in parenthesis
+  // assigns currentUser.email with the newMail string
+  // overwrite currentUser's email
+  private changeMail(newMail:string) {
+    this.currentUser.email = newMail
+  }
+
+  private keyPress(event:KeyboardEvent) {
+    if (event.keyCode == 13){ // 13 is enter/return from the keyboard
+      var inputElement = <HTMLInputElement>event.target
+      this.changeMail(inputElement.value) // calling changeMail above
+    }
+  }
+  // ====================================================================================================
+  // ====================================================================================================
 }
 
 // similar to classes - only defines types - part of tutorial 1
