@@ -1,42 +1,54 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
+  selector: 'my-app', // tag used in index.html - look for 'loading changes'
+  // entirely possible, however wouldn't be recommended as there would be hundres of lines
   // template: `<h1>Hello {{name}}!!!!</h1>`,
+
+  // would instead use a templateUrl, create new file app/app.component.html
   templateUrl: 'app/app.component.html',
+
   // styles: ['.blue-bg{background-color:pink;}']
 })
-// export class AppComponent  { name = 'Keith Adrian Chong'; }
+
+// preword prior to tutorial 1, this is possible with template: in @Component
+// export class AppComponent { }
+// export class AppComponent { name = 'Keith Adrian Chong'; }
+
+// ====================================================================================================
+// ====================================================================================================
+// tutorial 1 : interpolation - username variable is expecting a string with 'keitheous' assigned to it
+// this can be used in app.component.html in the interpolation
+// private means that it is not accessible outside of the class
 export class AppComponent {
   private username:string = "Keitheous"
-  private currentUser:User = {username: "TestX", email: "test@test.com"}
-  private hideEmail:boolean = true
 
-  private toggle() {
-    this.hideEmail = !this.hideEmail
+  // currentUser of 'custom' type User is defined down below in interface User - object with properties
+  // matches the properties User interface down below - username and email. strings
+  //
+  private currentUser:User = {
+    username: 'KeithChong',
+    email: 'keithchong@gmail.com'
   }
 
-  private disabledInput:boolean = false
-
-  private isDisabled():boolean {
-    return this.disabledInput
-  }
-
-  private isBlueBg:boolean = true
-  private bgColor:string = 'grey'
-
-  private getUsername():string { // returns a string as specified
+  // private method that doesnt take in any parameters - empty parentheses, expected to return a string
+  private getUsername():string {
     return this.currentUser.username
-    // this marks the current instance of the class
-    // accessing current user property - pulling username property
-    // pulling only username of currentUser - expected return value is TestX
+    // this marks the current instance of the class(line 22) - currentUser(line 28)
+    // which pull username property(line 29)
+  }
+
+  private getEmail():string {
+    return this.currentUser.email // pulls email property of instance currentUser of class AppComponent
   }
 }
 
-// interface is similar to types - will contain objects with matching properties
-// you put a function into a method to build a class?
-
+// similar to classes - only defines types
 interface User {
   username:string,
   email:string
 }
+
+// please refer to app.component.html to see how the variables are being called through interpolation
+// ====================================================================================================
+// ====================================================================================================
