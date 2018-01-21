@@ -1,7 +1,7 @@
 <h1> Hello Angular Tutorial! </h1>
 
 <div class="interpolation">
-  <h2> ========================== </h2>
+  <hr>
   <h1> Tutorial 1 : Interpolation </h1>
 
   <p> this is a paragraph</p>
@@ -22,7 +22,7 @@
 </div>
 
 <div class="property-binding">
-  <h2> ========================== </h2>
+  <hr>
   <h1> Tutorial 2 : Property Binding </h1>
 
   <p> Hello {{ getUsername() }} </p>
@@ -43,7 +43,7 @@
 </div>
 
 <div class="event-binding">
-  <h2> ========================== </h2>
+  <hr>
   <h1> Tutorial 3 : Event Binding </h1>
 
   <p> Hello {{currentUser.username}}!!</p>
@@ -60,7 +60,7 @@
 </div>
 
 <div class="local-variables">
-  <h2> ========================== </h2>
+  <hr>
   <h1> Tutorial 4 : Local Variables </h1>
   <p> assigning input value chomp to a local variable </p>
   <p> new use of referencing which is a var with # in front</p>
@@ -70,12 +70,30 @@
     <p>input value is : {{a.value}}</p>
   </div>
 
+  <br>
+  <p>lets change our email,</p>
+  <h3> Current user email is {{currentUser.email}}!!</h3>
 
-  <div> <!-- clickevents - on click expect something to happen -->
+  <!-- clickevents - on click expect something to happen on click-->
+  <div>
+    <p>on click</p>
     <button type="button" name="button" (click)="changeMail(newMail.value)">Update Email!</button>
     <input type="text"  placeholder="type and click!" #newMail>
-    <p> Hello {{currentUser.email}}!!</p>
   </div>
 
+  <!-- keypress release event on keypress release, angular 2 specific -->
+  <!-- calls for keyPress method within app.component.ts -->
+  <div>
+    <p>on key release</p>
+    <input type="text"  placeholder="type and hit enter!" #newMail2 (keyup)="keyPress($event)">
+  </div>
 
+  <div> <!-- shortened version keyPress DOESNT call method within app.component.ts -->
+    <p>shortened version of on key release</p>
+    <input type="text"  placeholder="again type and hit enter!" #newMail3
+                                                    (keyup.enter)="changeMail(newMail3.value)">
+  </div>
 </div>
+
+
+  <hr>
