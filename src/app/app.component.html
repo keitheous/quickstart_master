@@ -95,5 +95,28 @@
   </div>
 </div>
 
-
+<div class="ngIf-and-ngFor">
   <hr>
+    <h1> Tutorial 5 : NG IF and FOR </h1>
+
+    <h2> *ngIf </h2>
+    <p *ngIf='trueOrFalse'>This text appears or disappears depending on the NG-IF statement</p>
+    <p> can you see the text above? ^^  pointing up ^^ </p>
+    <br>
+
+    <h2> *ngFor </h2>
+
+    <ul>
+      <li *ngFor="let hero of heroes">
+        {{ hero }}
+      </li>
+    </ul>
+
+    <!-- deprecated? cant work -->
+    <!-- <ul>
+      <li *ngFor="#user of users, #i=index">
+        ({{ i }}){{ user.username }} - <em>{{ user.email }}</em>
+      </li>
+    </ul> -->
+    <br>
+</div>

@@ -85,6 +85,20 @@ export class AppComponent {
   }
   // ====================================================================================================
   // ====================================================================================================
+  // Tutorial 5 : ng IF and For
+
+  private trueOrFalse:boolean = true // play around with this value
+
+  // deprecated? cant work
+  // private users:Array<User> = [
+  //   {username: "User1", email: "User1@example.com"},
+  //   {username: 'User2', email: 'user2@example.com'},
+  //   {username: 'User3', email: 'user3@example.com'},
+  //   {username: 'User4', email: 'user4@example.com'}
+  // ]
+
+  heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
+
 }
 
 // similar to classes - only defines types - part of tutorial 1
