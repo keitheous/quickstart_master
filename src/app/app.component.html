@@ -46,13 +46,15 @@
   <h2> ========================== </h2>
   <h1> Tutorial 3 : Event Binding </h1>
 
-  <p> Hello {{ getUsername() }} </p>
+  <p> Hello {{currentUser.username}}!!</p>
 
-  <button (click)="toggle()">Toggle(click)</button>
+  <!-- lets investigate why this is not working anymore -->
+  <p><button (click)='toggle()'>Toggle (click)</button></p>
 
-  <p>Email: </p>
+  <p [hidden]='hideEmail'>Your email is : <em>{{currentUser.email}}</em></p>
 
-  <p [hidden]='hideEmail'>Your email is <em>{{currentUser.email}}</em></p>
+  <!-- lets investigate why this is not working anymore -->
+  <p><button (mouseleave)="toggle()">Toggle(mouseleave)</button></p>
 
-  <button (mouseleave)="toggle()">Toggle(mouseleave)</button>
+  <!-- negation doesnt work, 2 of the same element on page. for now lets move on -->
 </div>
