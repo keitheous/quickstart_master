@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
   // would instead use a templateUrl, create new file app/app.component.html
   templateUrl: 'app/app.component.html',
 
-  // styles: ['.blue-bg{background-color:pink;}']
+  // used in tutorial 2 : property binding - used in html file - play around with colors
+  styles: ['.blue-bg{background-color:yellow;}']
 })
 
 // preword prior to tutorial 1, this is possible with template: in @Component
@@ -17,7 +18,7 @@ import { Component } from '@angular/core';
 
 // ====================================================================================================
 // ====================================================================================================
-// tutorial 1 : interpolation - username variable is expecting a string with 'keitheous' assigned to it
+// Tutorial 1 : interpolation - username variable is expecting a string with 'keitheous' assigned to it
 // this can be used in app.component.html in the interpolation
 // private means that it is not accessible outside of the class
 export class AppComponent {
@@ -26,10 +27,7 @@ export class AppComponent {
   // currentUser of 'custom' type User is defined down below in interface User - object with properties
   // matches the properties User interface down below - username and email. strings
   //
-  private currentUser:User = {
-    username: 'KeithChong',
-    email: 'keithchong@gmail.com'
-  }
+  private currentUser:User = {  username: 'KeithChong', email: 'keithchong@gmail.com' }
 
   // private method that doesnt take in any parameters - empty parentheses, expected to return a string
   private getUsername():string {
@@ -41,14 +39,34 @@ export class AppComponent {
   private getEmail():string {
     return this.currentUser.email // pulls email property of instance currentUser of class AppComponent
   }
+
+  // ====================================================================================================
+  // ====================================================================================================
+  // Tutorial 2 : property binding
+
+  private hideEmail:boolean = true
+
+  private disabledInput:boolean = false
+
+  private isDisabled():boolean {
+    return this.disabledInput
+  }
+
+  private isBlueBg:boolean = true
+
+  private bgColor:string = 'red'
+
+  // changing these values and observe the changes on the html page
+  // ====================================================================================================
+  // ====================================================================================================
 }
 
-// similar to classes - only defines types
+// similar to classes - only defines types - part of tutorial 1
 interface User {
   username:string,
   email:string
 }
 
-// please refer to app.component.html to see how the variables are being called through interpolation
+// please refer to app.component.html to see how these are being called
 // ====================================================================================================
 // ====================================================================================================

@@ -1,22 +1,43 @@
 <h1> Hello Angular Tutorial! </h1>
 
-<h2> ========================== </h2>
-<h1> Tutorial 1 : Interpolation </h1>
+<div class="interpolation">
+  <h2> ========================== </h2>
+  <h1> Tutorial 1 : Interpolation </h1>
 
-<p> this is a paragraph</p>
+  <p> this is a paragraph</p>
 
-<em> interpolation is represented by double curly braces. please refer to the code for the text below. </em>
+  <em> interpolation is represented by double curly braces. please refer to the code for the text below. </em>
 
-<p> 1 plus 1 is {{ 1 + 1 }}</p>
+  <p> 1 plus 1 is {{ 1 + 1 }}</p>
 
-<p> your username is {{ username }} and this is defined in line 21 of <em>app.component.ts</em></p>
+  <p> your username is {{ username }} and this is defined in line 21 of <em>app.component.ts</em></p>
 
-<p> Hi, {{ currentUser.username }} - {{ currentUser.email }}</p>
+  <p> Hi, {{ currentUser.username }} - {{ currentUser.email }}</p>
 
-<p> Hello, {{ currentUser.username + ' - ' +  currentUser.email }}, bye</p>
+  <p> Hello, {{ currentUser.username + ' - ' +  currentUser.email }}, bye</p>
 
-<p> method getUsername returns {{ getUsername() }} ! </p>
+  <p> method getUsername returns {{ getUsername() }} ! </p>
 
-<p> On the other hand, method getEmail returns {{ getEmail() }} =) </p>
+  <p> On the other hand, method getEmail returns {{ getEmail() }} =) </p>
+</div>
 
-<h2> ========================== </h2>
+<div class="property-binding">
+  <h2> ========================== </h2>
+  <h1> Tutorial 2 : Property Binding </h1>
+
+  <p> Hello {{ getUsername() }} </p>
+
+  <p [hidden]='hideEmail'>Your email is {{currentUser.email}}</p>
+
+  <input [disabled]='disabledInput' type='text' placeholder='Enter text'>
+
+  <input [disabled]='isDisabled()' type='text' placeholder='Enter text'>
+
+  <input [disabled]='isDisabled()' type='text' placeholder='Enter text'
+                                                [value]='currentUser.username'>
+
+  <input [class.blue-bg]='isBlueBg' type='text' placeholder='Enter text'>
+
+  <input [style.background-color]='bgColor' type='text'
+                                                placeholder='Enter text'>
+</div>
