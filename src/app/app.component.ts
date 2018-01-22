@@ -114,14 +114,46 @@ import { Component } from '@angular/core';
 
 
 // This is for Tutorial Part B : Building an application
+import {Account} from './account.model';
+
 @Component({
   selector: 'my-app',
 
-  // would instead use a templateUrl, create new file app/app.component_build_an_app_part2.html
+  //file app/app.component_build_an_app_part2.html
   templateUrl: 'app/app.component_build_an_app_part2.html',
 
 })
 
 export class AppComponent {
 
+  private _accounts:Array<Account> = [
+    {
+      id:1,
+      title:'Bank Xyz',
+      description:'This is my main bank Account.',
+      balance:501.20
+    },
+    new Account(2, 'Bank Asd', 'My secret Bank Account.', 1024.10)
+  ]
+
+  private _nextId = 3
+  private createAcc(titleEl:any, descEl:any, balEl:any){
+    this._accounts.push(
+      new Account(
+        this._nextId,
+        titleEl.value,
+        descEl.value,
+        balEl.value
+      )
+    )
+    this._nextId++
+
+    titleEl.value = ''
+    descEl.value = ''
+    balEl.value = 0
+  }
+
+  private removeAcc(index:number){
+    this._accounts.splice(index, 1)
+  }
 }
