@@ -1,5 +1,8 @@
 export class Account {
+  // export class - seperation - can use this class else where
 
+  // public attributes as this will be used extensively else where
+  // can be recycled as much as we want
   public id:number
 
   public title:string
@@ -8,8 +11,8 @@ export class Account {
 
   public balance:number
 
-  // constructor used to set the properties
-  // a diff instance is create when this is called else where
+  // constructor used to create an object of this type - basically a method
+  // an instance is created when this is called
   public constructor(id:number, title:string, description:string, balance:number){
     this.id = id
     this.title = title
@@ -17,5 +20,3 @@ export class Account {
     this.balance = balance
   }
 }
-
-// separate so we can recycle this code else where

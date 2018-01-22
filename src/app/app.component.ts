@@ -114,18 +114,20 @@ import { Component } from '@angular/core';
 
 
 // This is for Tutorial Part B : Building an application
+
 import {Account} from './account.model';
+// import to include export class Account
 
 @Component({
   selector: 'my-app',
 
-  //file app/app.component_build_an_app_part2.html
   templateUrl: 'app/app.component_build_an_app_part2.html',
-
+  //file app/app.component_build_an_app_part2.html
 })
 
 export class AppComponent {
 
+  // assumption: Account object - Array called _accounts
   private _accounts:Array<Account> = [
     {
       id:1,
@@ -136,7 +138,14 @@ export class AppComponent {
     new Account(2, 'Bank Asd', 'My secret Bank Account.', 1024.10)
   ]
 
+  // assumption: _nextID is like a variable with 3 assigned to it
   private _nextId = 3
+
+  // this is a method.
+  // when createAcc is called with 3 params passed in, we create an Account
+  // object with new, then push it into the array _accounts
+  // then increment _nextID, and clear all the declaractions that follows,
+  // with '' and 0
   private createAcc(titleEl:any, descEl:any, balEl:any){
     this._accounts.push(
       new Account(
