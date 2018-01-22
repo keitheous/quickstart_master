@@ -13,6 +13,7 @@ export class Account {
 
   // constructor used to create an object of this type - basically a method
   // an instance is created when this is called
+  // this constructor is used to initialize object Account
   public constructor(id:number, title:string, description:string, balance:number){
     this.id = id
     this.title = title

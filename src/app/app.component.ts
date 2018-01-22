@@ -127,13 +127,17 @@ import {Account} from './account.model';
 
 export class AppComponent {
 
+  // variables are known as properties in angular
+  // naming convention for private var by placing _underscore in front of the name
   // assumption: Account object - Array called _accounts
+  // the 2 ways to initialize an Account object
+  // private _propertyName:DataType<Object>
   private _accounts:Array<Account> = [
     {
       id:1,
       title:'Bank Xyz',
       description:'This is my main bank Account.',
-      balance:501.20
+      balance:501.2
     },
     new Account(2, 'Bank Asd', 'My secret Bank Account.', 1024.10)
   ]
@@ -141,16 +145,19 @@ export class AppComponent {
   // assumption: _nextID is like a variable with 3 assigned to it
   private _nextId = 3
 
-  // this is a method.
-  // when createAcc is called with 3 params passed in, we create an Account
-  // object with new, then push it into the array _accounts
-  // then increment _nextID, and clear all the declaractions that follows,
-  // with '' and 0
+  // based on personal observation, this is a METHOD called by a template.
+  // when createAcc is called with 3 params passed in, we create an Account object
+  // with constructor method - 'new', then push it into the array _accounts
+  // then increment _nextID, and reset all the declaractions that follows,
+  // with '' and 0.
+  // This refers to the object in which this method is contained in
+  // (convention)
+  // titleEl, descEl and balEl here refers to the variables from html elements
   private createAcc(titleEl:any, descEl:any, balEl:any){
     this._accounts.push(
       new Account(
-        this._nextId,
-        titleEl.value,
+        this._nextId, // first iteration is 3 (increment after first iteration)
+        titleEl.value, // pull the value of html element titleEl
         descEl.value,
         balEl.value
       )
@@ -162,6 +169,8 @@ export class AppComponent {
     balEl.value = 0
   }
 
+  // in this method, we take in index param from html element
+  // remove one element from position index using splice
   private removeAcc(index:number){
     this._accounts.splice(index, 1)
   }
