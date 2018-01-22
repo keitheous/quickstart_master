@@ -123,6 +123,8 @@ import {Account} from './account.model';
 
   templateUrl: 'app/app.component_build_an_app_part2.html',
   //file app/app.component_build_an_app_part2.html
+
+  styleUrls: ['app/app.component.css']
 })
 
 export class AppComponent {
