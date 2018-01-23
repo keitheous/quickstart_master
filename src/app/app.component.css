@@ -16,3 +16,7 @@
   /* apply 4px to all the children of this class */
   margin: 4px;
 }
+
+.selected {
+  background-color: #45EE50;
+}

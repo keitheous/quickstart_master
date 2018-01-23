@@ -194,6 +194,8 @@ import {Account} from './account.model';
 
 export class AppComponent {
 
+  private _selected:Array<boolean> = [false, false]; // default not selected
+
   private _accounts:Array<Account> = [
     {
       id:1,
@@ -202,11 +204,12 @@ export class AppComponent {
       balance:501.2
     },
     new Account(2, 'Bank Asd', 'My secret Bank Account.', 1024.10)
-  ]
+  ];
 
   private _nextId = 3
 
   private createAcc(titleEl:any, descEl:any, balEl:any){
+    this._selected.push(false) // not selected by default
     this._accounts.push(
       new Account(
         this._nextId,
@@ -224,7 +227,11 @@ export class AppComponent {
 
   private removeAcc(index:number){
     this._accounts.splice(index, 1)
+    this._selected.splice(index, 1)
   }
 
+  private select(index:number){
+    this._selected[index] = !this._selected[index]
+  }
 
 }
