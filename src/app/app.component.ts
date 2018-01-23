@@ -178,60 +178,95 @@ import { Component } from '@angular/core';
 //   }
 // }
 
-// This is for Tutorial Part C : Bootstrap an application
 
-import {Account} from './account.model';
-// import to include export class Account
+// This is for Tutorial Part C : Bootstrap an application
+// import {Account} from './account.model';
+// // import to include export class Account
+//
+// @Component({
+//   selector: 'my-app',
+//
+//   templateUrl: 'app/app.component_bootstrap_app_part3.html',
+//   //file app/app.component_build_an_app_part2.html
+//
+//   styleUrls: ['app/app.component.css']
+// })
+//
+// export class AppComponent {
+//
+//   private _selected:Array<boolean> = [false, false]; // default not selected
+//
+//   private _accounts:Array<Account> = [
+//     {
+//       id:1,
+//       title:'Bank Xyz',
+//       description:'This is my main bank Account.',
+//       balance:501.2
+//     },
+//     new Account(2, 'Bank Asd', 'My secret Bank Account.', 1024.10)
+//   ];
+//
+//   private _nextId = 3
+//
+//   private createAcc(titleEl:any, descEl:any, balEl:any){
+//     this._selected.push(false) // not selected by default
+//     this._accounts.push(
+//       new Account(
+//         this._nextId,
+//         titleEl.value,
+//         descEl.value,
+//         balEl.value
+//       )
+//     )
+//     this._nextId++
+//
+//     titleEl.value = ''
+//     descEl.value = ''
+//     balEl.value = 0
+//   }
+//
+//   private removeAcc(index:number){
+//     this._accounts.splice(index, 1)
+//     this._selected.splice(index, 1)
+//   }
+//
+//   private select(index:number){
+//     this._selected[index] = !this._selected[index]
+//   }
+//
+// }
+
+
+// This is for Tutorial Part D : Content Seperation
+
+import {Account} from './account/account.model';
+import {AccountsList} from './account/accounts_list.component';
 
 @Component({
   selector: 'my-app',
-
-  templateUrl: 'app/app.component_bootstrap_app_part3.html',
-  //file app/app.component_build_an_app_part2.html
-
-  styleUrls: ['app/app.component.css']
+  templateUrl: 'app/app.component_content_separation_part4.html',
+  styleUrls:['app/app.component.css'],
+  // directives: AccountsList,
 })
 
 export class AppComponent {
 
-  private _selected:Array<boolean> = [false, false]; // default not selected
-
-  private _accounts:Array<Account> = [
-    {
-      id:1,
-      title:'Bank Xyz',
-      description:'This is my main bank Account.',
-      balance:501.2
-    },
-    new Account(2, 'Bank Asd', 'My secret Bank Account.', 1024.10)
-  ];
-
   private _nextId = 3
 
   private createAcc(titleEl:any, descEl:any, balEl:any){
-    this._selected.push(false) // not selected by default
-    this._accounts.push(
-      new Account(
-        this._nextId,
-        titleEl.value,
-        descEl.value,
-        balEl.value
-      )
-    )
-    this._nextId++
+    // this._selected.push(false) // not selected by default
+    // this._accounts.push(
+    //   new Account(
+    //     this._nextId,
+    //     titleEl.value,
+    //     descEl.value,
+    //     balEl.value
+    //   )
+    // )
+    // this._nextId++
 
     titleEl.value = ''
     descEl.value = ''
     balEl.value = 0
   }
-
-  private removeAcc(index:number){
-    this._accounts.splice(index, 1)
-    this._selected.splice(index, 1)
-  }
-
-  private select(index:number){
-    this._selected[index] = !this._selected[index]
-  }
-
 }
