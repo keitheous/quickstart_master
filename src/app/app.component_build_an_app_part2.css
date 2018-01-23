@@ -1,0 +1,18 @@
+.info {
+  background-color: #A1DBF0;
+  padding: 10px 24px;
+  margin: 8px;
+  color: black;
+}
+
+.acc {
+  background-color: #BBBBBB;
+  padding: 10px 24px;
+  margin: 8px;
+  color: black;
+}
+
+.acc >*{
+  /* apply 4px to all the children of this class */
+  margin: 4px;
+}
